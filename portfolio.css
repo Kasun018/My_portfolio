@@ -807,4 +807,127 @@ footer {
         bottom: -8px;
     }
 }
+/* responsive for mobile */
   
+@media (max-width: 768px) {
+    
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text .subtitle {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+
+    .hero-image {
+        margin: 20px auto 0;
+        max-width: 280px;
+    }
+
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+    }
+
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+
+    .qual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    
+    .skills h2 {
+        font-size: 2rem;
+    }
+
+    .slide {
+        min-width: 180px;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-link {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+}
