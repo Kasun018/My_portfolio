@@ -916,7 +916,7 @@ footer {
     }
 }
 
-/* Large Desktop Styles */
+
 @media (min-width: 1025px) {
     .btn:hover {
         transform: translateY(-4px);
@@ -935,7 +935,7 @@ footer {
     }
 }
 
-/* Extra Large Screens */
+
 @media (min-width: 1200px) {
     .hero-content {
         gap: 80px;
@@ -946,7 +946,6 @@ footer {
     }
 }
 
-/* High DPI Screens */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .hero-image img,
     .about-image img {
@@ -955,7 +954,6 @@ footer {
     }
 }
 
-/* Reduce Motion for Accessibility */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
