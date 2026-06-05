@@ -21,6 +21,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#qualifications">Education</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -97,23 +98,87 @@
         </div>
     </section>
 
-    <section id="projects" class="py-5 bg-light">
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Work <span class="text-primary">Experience</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+
+                    <!-- Fyuxera -->
+                    <div class="experience-card d-flex gap-4 mb-4 p-4 rounded border">
+                        <div class="experience-icon flex-shrink-0 d-flex align-items-center justify-content-center rounded" style="width:60px;height:60px;background:#00bfff;">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                                <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4zM12 13c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4 6H8v-.57c0-.81.48-1.53 1.22-1.85C9.93 16.21 10.94 16 12 16s2.07.21 2.78.58c.74.32 1.22 1.04 1.22 1.85V19z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                                <div>
+                                    <h3 class="h5 fw-bold mb-1">Frontend Developer</h3>
+                                    <p class="text-primary fw-semibold mb-1">Fyuxera</p>
+                                </div>
+                                <span class="badge rounded-pill px-3 py-2" style="background:#00bfff;color:#000;">Current</span>
+                            </div>
+                            <p class="mb-2">Working as a Frontend Developer at Fyuxera, building responsive and user-friendly web applications. Responsible for designing and implementing modern UI components, ensuring cross-browser compatibility, and delivering high-quality digital experiences using HTML, CSS, and JavaScript.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">React</span>
+                                <span class="badge bg-secondary">Responsive Design</span>
+                            </div>
+                            <!-- Featured Project -->
+                            <div class="border rounded p-3" style="background:#f0f9ff;border-color:#00bfff !important;">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#00bfff"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                                    <span class="fw-semibold" style="color:#0077a8;">Featured Project at Fyuxera</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <div>
+                                        <p class="fw-bold mb-0">PureICT.lk — Online ICT Learning Platform</p>
+                                        <small class="text-muted">Advanced Level ICT E-learning platform with dashboard, packages, live classes & payments</small>
+                                    </div>
+                                    <a href="https://pureict.lk/" target="_blank" class="btn btn-sm btn-primary">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="me-1"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                                        View Live Site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5 bg-white">
         <div class="container">
             <h2 class="text-center mb-5">My Projects</h2>
             <div class="row g-4">
-                <!-- Project 1 -->
+                <!-- Project 1 - PureICT.lk (Featured) -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
+                    <div class="card h-100 border-0" style="border-top: 3px solid #00bfff !important;">
                         <div class="card-body">
-                            <h3 class="card-title h5">E-learning website</h3>
-                            <p class="card-text">We are an E-Learning platform focused on making education easy, accessible, and engaging. Our goal is to provide students with interactive courses, resources, and tools that help them learn anytime, anywhere. We aim to create a smooth and effective learning experience for everyone.</p>
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <span class="badge bg-secondary">HTML5</span>
-                                <span class="badge bg-secondary">JavaScript</span>
-                                <span class="badge bg-secondary">CSS3</span>
-                                <span class="badge bg-secondary">SQL</span>
-                                <span class="badge bg-secondary">PHP</span>
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h3 class="card-title h5 mb-0">PureICT.lk</h3>
+                                <span class="badge" style="background:#00bfff;color:#000;font-size:0.7rem;">Live</span>
                             </div>
+                            <p class="text-primary small fw-semibold mb-2">Fyuxera — Online ICT Platform</p>
+                            <p class="card-text">A full-featured Advanced Level ICT e-learning platform built for Akash Vidarshana. Includes a public landing page, student dashboard with exam countdown, packages & class management, payment approvals, and a full admin panel with user management.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3 mb-3">
+                                <span class="badge bg-secondary">HTML5</span>
+                                <span class="badge bg-secondary">CSS3</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                                <span class="badge bg-secondary">PHP</span>
+                                <span class="badge bg-secondary">SQL</span>
+                                <span class="badge bg-secondary">Bootstrap</span>
+                            </div>
+                            <a href="https://pureict.lk/" target="_blank" class="btn btn-primary btn-sm w-100">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="me-1"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                                Visit PureICT.lk
+                            </a>
                         </div>
                     </div>
                 </div>
