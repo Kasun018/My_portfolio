@@ -3,11 +3,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
-    color: #f8f9fa;
-}
-
-p, .card-text, .lead, .text-secondary {
-    color: #e9ecef !important;
 }
 
 /* Custom Nav Brand */
