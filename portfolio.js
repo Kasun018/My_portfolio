@@ -1,23 +1,28 @@
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
-            
-            // If on mobile and navbar is open, collapse it after click
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            // Close mobile navbar after clicking a nav link
+            const navbarCollapse = document.querySelector('#navbarNav');
             if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
             }
         }
     });
 });
+
 
 // Contact form submission
 const contactForm = document.querySelector('.contact-form');
