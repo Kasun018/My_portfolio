@@ -1,85 +1,330 @@
-@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap');
+/* ============================================
+   PORTFOLIO CSS — Bootstrap 5 Companion
+   Only custom styles that Bootstrap doesn't cover
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ---- Root Variables ---- */
+:root {
+    --brand:      #00bfff;
+    --brand-dark: #0099cc;
+    --brand-deep: #007aaa;
+}
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
     overflow-x: hidden;
+    color: #1e293b;
 }
 
-/* Custom Nav Brand */
-.navbar-brand {
-    color: #00bfff !important;
-    font-size: 24px;
+/* Scroll offset for sticky nav */
+section[id] { scroll-margin-top: 64px; }
+
+/* ---- Letter spacing utility ---- */
+.ls-wide { letter-spacing: 0.08em; }
+
+/* ---- Min-width helper ---- */
+.min-w-0 { min-width: 0; }
+
+/* ---- Section min-height for hero ---- */
+.min-vh-section { min-height: calc(100vh - 64px); }
+
+/* ============================================
+   BRAND COLOR
+   ============================================ */
+.brand-color { color: var(--brand) !important; }
+
+.text-primary { color: var(--brand) !important; }
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar-brand { color: var(--brand) !important; letter-spacing: -0.5px; }
+
+.navbar-nav .nav-link {
+    transition: color 0.2s, background 0.2s;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--brand) !important;
+    background: rgba(0, 191, 255, 0.08);
 }
 
-/* Custom Buttons */
-.btn-primary {
-    background: linear-gradient(135deg, #00bfff, #0099cc);
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-brand {
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+    color: #000;
+    font-weight: 600;
     border: none;
+    transition: all 0.25s ease;
+}
+.btn-brand:hover, .btn-brand:focus {
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand-deep));
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.35);
+}
+.btn-outline-dark {
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+.btn-outline-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, #0099cc, #007a99);
+/* ============================================
+   HERO
+   ============================================ */
+.hero-img {
+    width: min(300px, 75vw);
+    height: min(300px, 75vw);
+    object-fit: cover;
+    border: 4px solid var(--brand);
 }
 
-/* Skills Slider */
-.skills {
-    overflow: hidden;
+@media (min-width: 768px) {
+    .hero-img { width: min(350px, 40vw); height: min(350px, 40vw); }
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #e2e8f0;
+    transition: all 0.25s ease;
+    color: #64748b !important;
+}
+.social-icon:hover {
+    border-color: var(--brand);
+    color: var(--brand) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.25);
+}
+
+/* ============================================
+   SKILLS SLIDER
+   ============================================ */
+.skills-section {
+    background: #0f172a;
 }
 
 .skills-slider {
-    width: 100%;
     overflow: hidden;
     position: relative;
+    /* Fade edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .slide-track {
     display: flex;
-    width: calc(200px * 16);
-    animation: scroll 30s linear infinite;
+    width: max-content;
+    animation: ticker 35s linear infinite;
 }
+.slide-track:hover { animation-play-state: paused; }
 
 .slide {
-    background: #333333;
-    color: #ffffff;
-    min-width: 200px;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: clamp(14px, 3vw, 1.2rem);
-    font-weight: bold;
-    text-align: center;
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 10px 24px;
+    margin: 0 8px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    border: 1px solid rgba(0, 191, 255, 0.2);
+    transition: background 0.2s, color 0.2s;
+    cursor: default;
+}
+.slide:hover {
+    background: rgba(0, 191, 255, 0.15);
+    color: var(--brand);
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
+@keyframes ticker {
+    0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-/* Image Enhancements */
-.hero img, .about img {
-    border: 3px solid #00bfff;
+/* ============================================
+   ABOUT
+   ============================================ */
+.about-img {
+    width: min(280px, 70vw);
+    border-radius: 1rem;
+    border: 3px solid var(--brand);
+}
+@media (min-width: 992px) {
+    .about-img { width: min(320px, 35vw); }
 }
 
-/* Card Enhancements */
-.card {
-    background: #2b2b2b !important;
-    color: #ffffff !important;
-    border: 1px solid #444444 !important;
+.stat-box {
+    background: #f8fafc;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.stat-box:hover {
+    box-shadow: 0 8px 24px rgba(0, 191, 255, 0.15);
+    transform: translateY(-2px);
 }
 
-/* Custom Text Primary */
-.text-primary {
-    color: #00bfff !important;
+/* ============================================
+   EXPERIENCE
+   ============================================ */
+.exp-card {
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+.exp-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 191, 255, 0.12) !important;
+    transform: translateY(-3px);
 }
 
-/* Badges */
-.badge.bg-secondary {
-    background-color: rgba(0, 191, 255, 0.2) !important;
-    color: #00bfff !important;
-    border: 1px solid rgba(0, 191, 255, 0.3);
+.badge-current {
+    background: var(--brand);
+    color: #000;
+    font-size: 0.75rem;
 }
 
-.badge.bg-primary {
-    background-color: #00bfff !important;
-    color: #000 !important;
+.featured-project {
+    background: #f0f9ff;
+    border-color: var(--brand) !important;
+}
+
+/* ============================================
+   PROJECTS
+   ============================================ */
+.project-card {
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+.project-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 191, 255, 0.15) !important;
+    transform: translateY(-4px);
+}
+
+/* Colored top bar on project cards */
+.card-brand-bar {
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+}
+
+.badge-live {
+    background: var(--brand);
+    color: #000;
+    font-size: 0.7rem;
+}
+.badge-wip {
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 0.7rem;
+}
+
+/* ============================================
+   QUALIFICATIONS
+   ============================================ */
+.qual-card {
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+.qual-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 191, 255, 0.12) !important;
+    transform: translateY(-4px);
+}
+
+.bg-primary { background-color: var(--brand) !important; }
+.badge.bg-primary { color: #000 !important; }
+
+/* ============================================
+   SKILLS BADGES
+   ============================================ */
+.skill-badge {
+    background: rgba(0, 191, 255, 0.12);
+    color: var(--brand-dark);
+    border: 1px solid rgba(0, 191, 255, 0.25);
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact-link {
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.contact-link:hover {
+    background: #f0f9ff !important;
+    border-color: var(--brand) !important;
+    transform: translateX(4px);
+}
+
+.contact-form .form-control {
+    border: 1.5px solid #e2e8f0;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-form .form-control:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.15);
+}
+.contact-form textarea { resize: vertical; min-height: 120px; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer .brand-color { color: var(--brand) !important; }
+
+/* ============================================
+   SECTION HEADING ACCENT
+   ============================================ */
+.text-center h2 {
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+}
+.text-center h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40px; height: 3px;
+    background: var(--brand);
+    border-radius: 2px;
+}
+
+/* ============================================
+   FADE-IN ANIMATION (JS triggered)
+   ============================================ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE FIXES
+   ============================================ */
+
+/* Very small phones: tighten spacing */
+@media (max-width: 375px) {
+    .hero-img { width: 65vw; height: 65vw; }
+    .btn-lg { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
+}
+
+/* Tablet: prevent overflow on experience card */
+@media (max-width: 767px) {
+    .exp-card .row.g-4 { flex-direction: column; }
 }
