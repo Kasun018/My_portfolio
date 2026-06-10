@@ -166,7 +166,7 @@ section[id] { scroll-margin-top: 64px; }
 .about-img {
     width: min(280px, 70vw);
     border-radius: 0;
-    border: 3px solid var(--brand);
+    border: none;
 }
 @media (min-width: 992px) {
     .about-img { width: min(320px, 35vw); }
