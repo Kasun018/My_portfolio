@@ -91,6 +91,7 @@ section[id] { scroll-margin-top: 64px; }
     height: min(300px, 75vw);
     object-fit: cover;
     border: 4px solid var(--brand);
+    border-radius: 0;
 }
 
 @media (min-width: 768px) {
@@ -164,7 +165,7 @@ section[id] { scroll-margin-top: 64px; }
    ============================================ */
 .about-img {
     width: min(280px, 70vw);
-    border-radius: 1rem;
+    border-radius: 0;
     border: 3px solid var(--brand);
 }
 @media (min-width: 992px) {
